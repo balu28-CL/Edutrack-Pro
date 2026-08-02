@@ -28,10 +28,18 @@ const registerUser = async (req, res) => {
             role
         });
 
-        res.status(201).json({
-            message: "User Registered Successfully",
-            user
-        });
+        const userResponse = {
+    _id: user._id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+    profileImage: user.profileImage
+};
+
+res.status(201).json({
+    message: "User Registered Successfully",
+    user: userResponse
+});
 
     } catch (error) {
 
@@ -77,11 +85,19 @@ const loginUser = async (req, res) => {
             }
         );
 
-        res.status(200).json({
-            message: "Login Successful",
-            token,
-            user
-        });
+        const userResponse = {
+    _id: user._id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+    profileImage: user.profileImage
+};
+
+res.status(200).json({
+    message: "Login Successful",
+    token,
+    user: userResponse
+});
 
     } catch (error) {
 

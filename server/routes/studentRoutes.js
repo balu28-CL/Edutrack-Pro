@@ -14,12 +14,14 @@ const {
 } = require("../controllers/studentController");
 
 const authorize = require("../middleware/roleMiddleware");
-router.post("/", protect, authorize("admin"), addStudent);
+router
+    .route("/")
+    .post(protect, authorize("admin"), addStudent)
+    .get(protect, getStudents);
 
-router.get("/", protect, getStudents);
-
-router.put("/:id", protect, authorize("admin"), updateStudent);
-
-router.delete("/:id", protect, authorize("admin"), deleteStudent);
+router
+    .route("/:id")
+    .put(protect, authorize("admin"), updateStudent)
+    .delete(protect, authorize("admin"), deleteStudent);
 
 module.exports = router;
