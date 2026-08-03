@@ -4,6 +4,7 @@ const authRoutes = require("./routes/authRoutes");
 const facultyRoutes = require("./routes/facultyRoutes");
 const protect = require("./middleware/authMiddleware");
 const studentRoutes = require("./routes/studentRoutes");
+const attendanceRoutes = require("./routes/attendanceRoutes");
 require("dotenv").config();
 
 const connectDB = require("./config/db");
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/faculty", facultyRoutes);
 app.use("/api/students", studentRoutes);
+app.use("/api/attendance", attendanceRoutes);
 
 app.get("/", (req, res) => {
     res.send("EduTrack Pro Backend Running 🚀");
