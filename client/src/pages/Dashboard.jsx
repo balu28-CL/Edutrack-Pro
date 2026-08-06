@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { getDashboardStats } from "../services/dashboardService";
+import StatCard from "../components/StatCard";
+import "../styles/Dashboard.css";
+import RecentNotice from "../components/RecentNotice";
+import MainLayout from "../layouts/MainLayout";
 
 function Dashboard() {
 
@@ -31,25 +35,49 @@ function Dashboard() {
     }
 
     return (
+        <MainLayout>
+        <div className="dashboard">
 
-        <div>
+            <div className="stats-container">
 
-            <h1>EduTrack Pro Dashboard</h1>
+    <StatCard
+        title="Students"
+        value={stats.totalStudents}
+    />
 
-            <h2>Total Students : {stats.totalStudents}</h2>
+    <StatCard
+        title="Faculty"
+        value={stats.totalFaculty}
+    />
 
-            <h2>Total Faculty : {stats.totalFaculty}</h2>
+    <StatCard
+        title="Attendance"
+        value={stats.totalAttendanceRecords}
+    />
 
-            <h2>Total Attendance : {stats.totalAttendanceRecords}</h2>
+    <StatCard
+        title="Marks"
+        value={stats.totalMarksRecords}
+    />
 
-            <h2>Total Marks : {stats.totalMarksRecords}</h2>
+    <StatCard
+        title="Active Notices"
+        value={stats.activeNotices}
+    />
 
-            <h2>Active Notices : {stats.activeNotices}</h2>
+    <StatCard
+        title="Attendance %"
+        value={stats.attendancePercentage}
+    />
 
-            <h2>Attendance % : {stats.attendancePercentage}</h2>
+</div>
 
-        </div>
-
+<RecentNotice
+    notices={stats.recentNotices}
+/>
+        
+</div>
+</MainLayout>
     );
 
 }
