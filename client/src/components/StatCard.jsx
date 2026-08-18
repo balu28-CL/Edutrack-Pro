@@ -5,8 +5,9 @@ import {
     FileText,
     Bell
 } from "lucide-react";
+import "../styles/StatCard.css";
 
-function StatCard({ title, value }) {
+function StatCard({ title, value,color }) {
 
     let Icon = Users;
 
@@ -35,7 +36,10 @@ else if (title === "Attendance %") {
 
         <div className="stat-header">
 
-            <div className="icon-box">
+          <div
+    className="icon-box"
+    style={{ backgroundColor: color }}
+>
                 <Icon size={24} />
             </div>
 
@@ -43,7 +47,7 @@ else if (title === "Attendance %") {
 
         </div>
 
-        <h1>{value}</h1>
+       <h1 style={{ color }}>{value}</h1>
 
     </div>
 

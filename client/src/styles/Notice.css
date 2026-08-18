@@ -1,0 +1,1300 @@
+/* =========================================================
+   NOTICE PAGE
+========================================================= */
+
+.notices-page {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.notices-page-header {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin: 0 0 32px 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.notices-page-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.notices-page .notices-page-title h1 {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #f2f4f6;
+
+    font-size: 34px !important;
+    font-weight: 600 !important;
+
+    line-height: 1.15 !important;
+
+    letter-spacing: -0.8px;
+}
+
+
+.notices-page .notices-page-title p {
+    margin: 8px 0 0 0 !important;
+    padding: 0 !important;
+
+    color: #94a3b8;
+
+    font-size: 15px !important;
+    font-weight: 400 !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   ADD NOTICE BUTTON
+========================================================= */
+
+.notices-page .add-notice-btn {
+    flex-shrink: 0;
+
+    margin: 0 0 0 auto !important;
+
+    width: auto !important;
+
+    height: 42px;
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(96, 165, 250, 0.18);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.notices-page .add-notice-btn:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(147, 197, 253, 0.4);
+
+    box-shadow:
+        0 8px 25px rgba(59, 130, 246, 0.25),
+        0 0 25px rgba(124, 58, 237, 0.15);
+}
+
+
+/* =========================================================
+   NOTICE CARD CONTAINER
+========================================================= */
+
+.notice-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    position: relative;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   ALL NOTICES HEADER
+========================================================= */
+
+.notice-card .notice-header {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+
+.notice-card .notice-header h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #cedeef;
+
+    font-size: 22px !important;
+    font-weight: 500 !important;
+
+    line-height: 1.2 !important;
+}
+
+.notice-header button {
+    margin-left: 405px;
+}
+
+/* =========================================================
+   NOTICE ITEM
+========================================================= */
+
+.notice-item {
+    position: relative;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 0 0 18px 0;
+
+    padding: 24px 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 24, 39, 0.96),
+            rgba(15, 23, 42, 0.90)
+        );
+
+    border:
+        1px solid rgba(96, 165, 250, 0.12);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(37, 99, 235, 0.03);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.notice-item::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #06b6d4
+        );
+
+    opacity: 0.8;
+}
+
+
+.notice-item:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(96, 165, 250, 0.22);
+
+    box-shadow:
+        0 14px 40px rgba(0, 0, 0, 0.30),
+        0 0 25px rgba(37, 99, 235, 0.06);
+}
+
+
+/* =========================================================
+   NOTICE TITLE ROW
+========================================================= */
+
+.notice-title-row {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin: 0 0 12px 0;
+}
+
+
+/* =========================================================
+   NOTICE TITLE
+========================================================= */
+
+.notice-title {
+    margin: 0;
+
+    color: #60a5fa;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    text-shadow:
+        0 0 12px rgba(96, 165, 250, 0.12);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   PRIORITY BADGE
+========================================================= */
+
+.priority-badge {
+    flex-shrink: 0;
+
+    padding: 5px 11px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    border: 1px solid transparent;
+}
+
+
+.priority-badge.normal {
+    background:
+        rgba(100, 116, 139, 0.15);
+
+    color: #94a3b8;
+
+    border-color:
+        rgba(148, 163, 184, 0.2);
+}
+
+
+.priority-badge.important {
+    background:
+        rgba(249, 115, 22, 0.15);
+
+    color: #fb923c;
+
+    border-color:
+        rgba(249, 115, 22, 0.25);
+}
+
+
+.priority-badge.urgent {
+    background:
+        rgba(239, 68, 68, 0.15);
+
+    color: #f87171;
+
+    border-color:
+        rgba(239, 68, 68, 0.3);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.notice-description {
+    margin: 0 0 18px 0;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.notice-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+.posted-by {
+    color: #94a3b8;
+
+    font-weight: 500;
+}
+
+
+.notice-time {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   EDIT / DELETE
+========================================================= */
+
+.notice-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 16px;
+}
+
+
+.edit-notice-btn,
+.delete-notice-btn {
+    height: 36px;
+    min-height: 36px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.edit-notice-btn {
+    background: #2563eb;
+}
+
+
+.edit-notice-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 16px rgba(37, 99, 235, 0.3);
+}
+
+
+.delete-notice-btn {
+    background: #dc2626;
+}
+
+
+.delete-notice-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 16px rgba(220, 38, 38, 0.3);
+}
+
+
+/* =========================================================
+   NOTICE FORM
+========================================================= */
+
+.notice-form {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 22px 0;
+
+    padding: 24px;
+
+    background:
+        rgba(15, 23, 42, 0.75);
+
+    border:
+        1px solid rgba(99, 102, 241, 0.22);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.2);
+
+    backdrop-filter: blur(16px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.notice-form h2 {
+    margin: 0 0 8px 0;
+
+    color: #f8fafc;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+========================================================= */
+
+.notice-form input,
+.notice-form textarea,
+.notice-form select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(30, 41, 59, 0.75);
+
+    color: #f8fafc;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.notice-form textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+
+.notice-form input:focus,
+.notice-form textarea:focus,
+.notice-form select:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+.notice-form option {
+    background: #0f172a;
+
+    color: white;
+}
+
+
+/* =========================================================
+   ADD FORM BUTTON
+========================================================= */
+
+.save-faculty-btn {
+    height: 42px;
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.save-faculty-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 20px rgba(59, 130, 246, 0.25);
+}
+
+
+/* =========================================================
+   EDIT FORM ACTIONS
+========================================================= */
+
+.notice-form-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 5px;
+}
+
+
+.notice-form-actions button {
+    height: 42px;
+    min-height: 42px;
+
+    padding: 0 16px;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+/* SAVE */
+
+.save-notices-btn {
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.save-notices-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 20px rgba(59, 130, 246, 0.25);
+}
+
+
+/* CANCEL */
+
+.notice-cancel-btn {
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color: #cbd5e1;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.notice-cancel-btn:hover {
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.notice-status {
+    margin: 0;
+
+    padding: 25px 0;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .notices-page .notices-page-title h1 {
+        font-size: 34px !important;
+    }
+
+    .notices-page .notices-page-title p {
+        font-size: 14px !important;
+    }
+
+    .notices-page-header {
+        gap: 18px;
+    }
+
+    .notices-page .add-notice-btn {
+        height: 40px;
+        min-height: 40px;
+
+        padding: 0 15px;
+
+        font-size: 13px !important;
+    }
+
+    .notice-card .notice-header h2 {
+        font-size: 20px !important;
+    }
+
+    .notice-item {
+        padding: 22px;
+    }
+
+    .notice-title {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .notices-page-header {
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 12px;
+    }
+
+    .notices-page .notices-page-title h1 {
+        font-size: 30px !important;
+    }
+
+    .notices-page .notices-page-title p {
+        font-size: 13px !important;
+    }
+
+    .notices-page .add-notice-btn {
+        flex-shrink: 0;
+
+        height: 38px;
+        min-height: 38px;
+
+        padding: 0 12px;
+
+        font-size: 12px !important;
+    }
+
+    .notice-title-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .notice-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+    .notice-actions {
+        flex-wrap: wrap;
+    }
+
+    .notice-form {
+        padding: 18px;
+    }
+
+    .notice-form-actions {
+        flex-wrap: wrap;
+    }
+}
+
+.view-all-btn {
+    border: 1px solid rgba(96, 165, 250, 0.18);
+
+    padding: 8px 14px;
+
+    height: 36px;
+
+    box-sizing: border-box;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;
+
+    font-family: inherit;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.view-all-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 16px rgba(59, 130, 246, 0.3);
+}
+
+/* =========================================================
+   NOTICE POPUP
+========================================================= */
+
+.notice-popup-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(2, 6, 23, 0.72);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 99999;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   POPUP BOX
+========================= */
+
+.notice-popup {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 30px 28px;
+
+    box-sizing: border-box;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 24, 39, 0.98),
+            rgba(15, 23, 42, 0.98)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        0 0 35px rgba(37, 99, 235, 0.08);
+
+    text-align: center;
+
+    animation: noticePopupIn 0.22s ease-out;
+}
+
+
+/* TOP GRADIENT */
+
+.notice-popup::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    border-radius: 20px 20px 0 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #06b6d4
+        );
+}
+
+
+/* =========================
+   POPUP ICON
+========================= */
+
+.notice-popup-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 16px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+
+    font-weight: 700;
+}
+
+
+/* SUCCESS */
+
+.notice-popup.success .notice-popup-icon {
+    background: rgba(34, 197, 94, 0.12);
+
+    border:
+        1px solid rgba(34, 197, 94, 0.25);
+
+    color: #4ade80;
+
+    box-shadow:
+        0 0 25px rgba(34, 197, 94, 0.08);
+}
+
+
+/* ERROR */
+
+.notice-popup.error .notice-popup-icon {
+    background: rgba(239, 68, 68, 0.12);
+
+    border:
+        1px solid rgba(239, 68, 68, 0.25);
+
+    color: #f87171;
+
+    box-shadow:
+        0 0 25px rgba(239, 68, 68, 0.08);
+}
+
+
+/* DELETE */
+
+.notice-popup.delete .notice-popup-icon {
+    background: rgba(239, 68, 68, 0.12);
+
+    border:
+        1px solid rgba(239, 68, 68, 0.25);
+
+    color: #f87171;
+
+    box-shadow:
+        0 0 25px rgba(239, 68, 68, 0.08);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.notice-popup h2 {
+    margin: 0 0 9px;
+
+    color: #f8fafc;
+
+    font-size: 21px;
+
+    font-weight: 650;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.notice-popup p {
+    margin: 0 auto;
+
+    max-width: 330px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   POPUP ACTIONS
+========================= */
+
+.notice-popup-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+
+/* =========================
+   OK BUTTON
+========================= */
+
+.notice-popup-ok {
+    margin-top: 24px;
+
+    min-width: 90px;
+
+    height: 40px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.notice-popup-ok:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 18px rgba(59, 130, 246, 0.3);
+}
+
+
+/* =========================
+   CANCEL BUTTON
+========================= */
+
+.notice-popup-cancel {
+    height: 40px;
+
+    padding: 0 18px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color: #cbd5e1;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.notice-popup-cancel:hover {
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    color: white;
+}
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.notice-popup-confirm {
+    height: 40px;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #dc2626;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.notice-popup-confirm:hover {
+    background: #ef4444;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 18px rgba(239, 68, 68, 0.25);
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes noticePopupIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .notice-popup {
+        max-width: 360px;
+
+        padding: 26px 20px;
+    }
+
+    .notice-popup h2 {
+        font-size: 19px;
+    }
+
+    .notice-popup p {
+        font-size: 13px;
+    }
+
+    .notice-popup-actions {
+        width: 100%;
+    }
+
+    .notice-popup-cancel,
+    .notice-popup-confirm {
+        flex: 1;
+    }
+
+}

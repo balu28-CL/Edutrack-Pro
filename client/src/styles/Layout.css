@@ -1,106 +1,258 @@
-.layout{
+/* =========================================
+   GLOBAL
+========================================= */
 
-    display:flex;
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 
-    min-height:100vh;
+    overflow: hidden;
 
+    background: #050816;
 }
 
-.sidebar{
 
-    width:250px;
+/* =========================================
+   MAIN LAYOUT
+========================================= */
 
-    background:#1e293b;
+.layout {
+    width: 100%;
+    height: 100vh;
 
-    color:white;
+    display: flex;
 
-    display:flex;
+    overflow: hidden;
 
-    flex-direction:column;
+    background: #050816;
 
-    justify-content:space-between;
-
-    padding:25px;
-
+    box-sizing: border-box;
 }
 
-.logo{
 
-    margin-bottom:40px;
-    text-decoration:aqua;
+/* =========================================
+   MAIN AREA
+========================================= */
 
+.main {
+    /*
+        Sidebar already occupies its own
+        flex space, so no margin-left
+        or calc() is needed.
+    */
+
+    flex: 1;
+
+    width: auto;
+
+    /*
+        IMPORTANT FOR RESPONSIVE FLEXBOX
+    */
+    min-width: 0;
+    min-height: 0;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(37, 99, 235, 0.20),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(124, 58, 237, 0.18),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(6, 182, 212, 0.05),
+            transparent 45%
+        ),
+
+        #050816;
 }
 
-.sidebar nav{
 
-    display:flex;
+/* =========================================
+   FUTURISTIC GRID
+========================================= */
 
-    flex-direction:column;
+.main::before {
+    content: "";
 
-    gap:18px;
+    position: absolute;
 
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(59, 130, 246, 0.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(59, 130, 246, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    pointer-events: none;
+
+    z-index: 0;
 }
 
-.sidebar a{
 
-    color:white;
+/* =========================================
+   BLUE / PURPLE GLOW
+========================================= */
 
-    text-decoration:none;
+/*
+    Disabled for now.
 
-    display:flex;
+    The previous large 500px blurred glow
+    was making the mobile page look almost
+    completely blue.
 
-    align-items:center;
+    We can add a smaller glow later after
+    responsive testing is finished.
+*/
 
-    gap:12px;
+.main::after {
+    content: "";
 
-    padding:12px;
+    position: absolute;
 
-    border-radius:10px;
+    width: 0;
+    height: 0;
 
-    transition:.3s;
+    right: 0;
+    top: 0;
 
+    background: transparent;
+
+    pointer-events: none;
+
+    z-index: 0;
 }
 
-.sidebar a:hover{
 
-    background:#334155;
+/* =========================================
+   CONTENT
+========================================= */
 
+.content {
+    position: relative;
+
+    z-index: 2;
+
+    isolation: auto;
+
+    flex: 1;
+
+    width: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    box-sizing: border-box;
+
+    /*
+        Vertical scrolling belongs to the
+        main content.
+
+        Tables have their own horizontal
+        scrolling wrappers.
+    */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 34px 42px;
 }
 
-.logout{
 
-    margin-top:auto;
+/* =========================================
+   SCROLLBAR
+========================================= */
 
+.content::-webkit-scrollbar {
+    width: 6px;
 }
 
-.main{
-
-    flex:1;
-
-    background:#f5f7fb;
-
+.content::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.navbar{
+.content::-webkit-scrollbar-thumb {
+    background: rgba(96, 165, 250, 0.25);
 
-    height:70px;
-
-    background:white;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:0 30px;
-
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-
+    border-radius: 10px;
 }
 
-.content{
+.content::-webkit-scrollbar-thumb:hover {
+    background: rgba(96, 165, 250, 0.45);
+}
 
-    padding:30px;
 
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .content {
+        padding: 28px 24px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .content {
+        padding: 20px 16px;
+
+        /*
+            Prevent the whole application
+            from becoming horizontally scrollable.
+        */
+        overflow-x: hidden;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 400px) {
+
+    .content {
+        padding: 16px 12px;
+    }
+}
+
+.main {
+    position: relative;
+    z-index: 10;
 }

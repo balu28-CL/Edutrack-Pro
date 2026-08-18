@@ -1,5 +1,9 @@
 const express = require("express");
+
 const router = express.Router();
+
+const protect = require("../middleware/authMiddleware");
+const authorize = require("../middleware/roleMiddleware");
 
 const {
     createMarks,
@@ -9,19 +13,48 @@ const {
     deleteMarks
 } = require("../controllers/marksController");
 
+
 // Create Marks
-router.post("/", createMarks);
+router.post(
+    "/",
+    protect,
+    authorize("admin", "faculty"),
+    createMarks
+);
+
 
 // Get All Marks
-router.get("/", getAllMarks);
+router.get(
+    "/",
+    protect,
+    getAllMarks
+);
+
 
 // Get Marks By ID
-router.get("/:id", getMarksById);
+router.get(
+    "/:id",
+    protect,
+    getMarksById
+);
+
 
 // Update Marks
-router.put("/:id", updateMarks);
+router.put(
+    "/:id",
+    protect,
+    authorize("admin", "faculty"),
+    updateMarks
+);
+
 
 // Delete Marks
-router.delete("/:id", deleteMarks);
+router.delete(
+    "/:id",
+    protect,
+    authorize("admin", "faculty"),
+    deleteMarks
+);
+
 
 module.exports = router;

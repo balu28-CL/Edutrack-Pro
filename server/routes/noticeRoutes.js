@@ -1,5 +1,9 @@
 const express = require("express");
+
 const router = express.Router();
+
+const protect = require("../middleware/authMiddleware");
+const authorize = require("../middleware/roleMiddleware");
 
 const {
     createNotice,
@@ -10,18 +14,43 @@ const {
 } = require("../controllers/noticeController");
 
 // Create Notice
-router.post("/", createNotice);
+router.post(
+    "/",
+    protect,
+    authorize("admin", "faculty"),
+    createNotice
+);
 
 // Get All Notices
-router.get("/", getAllNotices);
+router.get(
+    "/",
+    protect,
+    authorize("admin", "faculty", "student"),
+    getAllNotices
+);
 
 // Get Notice By ID
-router.get("/:id", getNoticeById);
+router.get(
+    "/:id",
+    protect,
+    authorize("admin", "faculty", "student"),
+    getNoticeById
+);
 
 // Update Notice
-router.put("/:id", updateNotice);
+router.put(
+    "/:id",
+    protect,
+    authorize("admin", "faculty"),
+    updateNotice
+);
 
 // Delete Notice
-router.delete("/:id", deleteNotice);
+router.delete(
+    "/:id",
+    protect,
+    authorize("admin", "faculty"),
+    deleteNotice
+);
 
 module.exports = router;

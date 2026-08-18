@@ -1,0 +1,882 @@
+/* =========================
+   COURSES PAGE
+========================= */
+
+.courses-page {
+    width: 100%;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.courses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+.courses-header h1 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 30px;
+}
+
+.courses-header p {
+    margin: 7px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ADD COURSE BUTTON
+========================= */
+
+.course-add-btn {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.course-add-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(59, 130, 246, 0.35);
+}
+
+
+/* =========================
+   COURSE FORM
+========================= */
+
+.course-form {
+    position: relative;
+
+    margin-bottom: 25px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 24, 39, 0.96),
+            rgba(15, 23, 42, 0.90)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+
+/* TOP GRADIENT LINE */
+
+.course-form::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #06b6d4
+        );
+}
+
+
+.course-form h2 {
+    margin: 0 0 20px;
+
+    color: #f8fafc;
+
+    font-size: 21px;
+}
+
+
+/* =========================
+   FORM GRID
+========================= */
+
+.course-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.course-form input,
+.course-form select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(30, 41, 59, 0.7);
+
+    color: #f8fafc;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+
+.course-form input::placeholder {
+    color: #64748b;
+}
+
+
+.course-form input:focus,
+.course-form select:focus {
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 15px rgba(139, 92, 246, 0.12);
+}
+
+
+.course-form select option {
+    background: #0f172a;
+
+    color: white;
+}
+
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.course-form-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+
+/* SAVE */
+
+.course-save-btn {
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.course-save-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+
+/* CANCEL */
+
+.course-cancel-btn {
+    padding: 11px 20px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.course-cancel-btn:hover {
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    color: white;
+}
+
+
+/* =========================
+   TABLE CARD
+========================= */
+
+.courses-table-container {
+    position: relative;
+
+    overflow-x: auto;
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 24, 39, 0.96),
+            rgba(15, 23, 42, 0.90)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.28);
+
+    overflow-y: hidden;
+}
+
+
+/* TOP GRADIENT LINE */
+
+.courses-table-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #06b6d4
+        );
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.courses-table {
+    width: 100%;
+
+    min-width: 1000px;
+
+    border-collapse: collapse;
+}
+
+
+/* HEADER */
+
+.courses-table th {
+    text-align: left;
+
+    padding: 14px 12px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    white-space: nowrap;
+}
+
+
+/* DATA */
+
+.courses-table td {
+    padding: 16px 12px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* HOVER */
+
+.courses-table tbody tr:hover {
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================
+   COURSE CODE
+========================= */
+
+.courses-table td:first-child {
+    color: #f8fafc;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   FACULTY
+========================= */
+
+.courses-table td:nth-child(6) {
+    color: #cbd5e1;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.course-edit-btn {
+    border:
+        1px solid rgba(59, 130, 246, 0.3);
+
+    background:
+        rgba(37, 99, 235, 0.1);
+
+    color: #60a5fa;
+
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-right: 8px;
+
+    transition: 0.2s ease;
+}
+
+
+.course-edit-btn:hover {
+    background:
+        rgba(37, 99, 235, 0.2);
+
+    border-color: #2563eb;
+}
+
+
+/* DELETE */
+
+.course-delete-btn {
+    border:
+        1px solid rgba(239, 68, 68, 0.25);
+
+    background:
+        rgba(239, 68, 68, 0.08);
+
+    color: #f87171;
+
+    padding: 7px 11px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.course-delete-btn:hover {
+    background:
+        rgba(239, 68, 68, 0.16);
+
+    border-color: #ef4444;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.no-courses {
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #94a3b8;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .courses-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .course-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .courses-table-container {
+        padding: 15px;
+    }
+
+    .course-form {
+        padding: 20px;
+    }
+
+    .course-form-actions {
+        flex-direction: column;
+    }
+
+    .course-save-btn,
+    .course-cancel-btn {
+        width: 100%;
+    }
+}
+
+/* =========================
+   COURSE POPUP OVERLAY
+========================= */
+
+.courses-popup-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(2, 6, 23, 0.72);
+
+    backdrop-filter: blur(6px);
+
+    -webkit-backdrop-filter: blur(6px);
+
+    z-index: 9999;
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+.courses-popup {
+    position: relative;
+
+    width: 400px;
+
+    max-width: calc(100% - 40px);
+
+    padding: 30px 28px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 24, 39, 0.98),
+            rgba(15, 23, 42, 0.98)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.55);
+
+    animation: coursePopupShow 0.22s ease-out;
+}
+
+
+/* TOP LINE */
+
+.courses-popup::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    border-radius: 20px 20px 0 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #06b6d4
+        );
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.courses-popup-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    font-weight: 700;
+}
+
+
+/* SUCCESS */
+
+.courses-popup.success
+.courses-popup-icon {
+    background: rgba(34, 197, 94, 0.12);
+
+    border:
+        1px solid rgba(34, 197, 94, 0.3);
+
+    color: #4ade80;
+
+    box-shadow:
+        0 0 25px rgba(34, 197, 94, 0.12);
+}
+
+
+/* ERROR */
+
+.courses-popup.error
+.courses-popup-icon {
+    background: rgba(239, 68, 68, 0.12);
+
+    border:
+        1px solid rgba(239, 68, 68, 0.3);
+
+    color: #f87171;
+
+    box-shadow:
+        0 0 25px rgba(239, 68, 68, 0.12);
+}
+
+
+/* DELETE */
+
+.courses-popup.delete
+.courses-popup-icon {
+    background: rgba(239, 68, 68, 0.12);
+
+    border:
+        1px solid rgba(239, 68, 68, 0.3);
+
+    color: #f87171;
+
+    box-shadow:
+        0 0 25px rgba(239, 68, 68, 0.12);
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.courses-popup h2 {
+    margin: 0 0 9px;
+
+    color: #f8fafc;
+
+    font-size: 21px;
+}
+
+
+.courses-popup p {
+    margin: 0 auto;
+
+    max-width: 330px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.courses-popup-ok {
+    margin-top: 24px;
+
+    min-width: 100px;
+
+    padding: 10px 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.courses-popup-ok:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 22px rgba(59, 130, 246, 0.35);
+}
+
+
+/* DELETE BUTTONS */
+
+.courses-popup-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+
+.courses-popup-cancel,
+.courses-popup-confirm {
+    min-width: 100px;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+/* CANCEL */
+
+.courses-popup-cancel {
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color: #cbd5e1;
+}
+
+
+.courses-popup-cancel:hover {
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    color: white;
+}
+
+
+/* CONFIRM DELETE */
+
+.courses-popup-confirm {
+    border:
+        1px solid rgba(239, 68, 68, 0.3);
+
+    background:
+        rgba(239, 68, 68, 0.12);
+
+    color: #f87171;
+}
+
+
+.courses-popup-confirm:hover {
+    background:
+        rgba(239, 68, 68, 0.2);
+
+    border-color: #ef4444;
+
+    color: #fca5a5;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes coursePopupShow {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.92)
+            translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .courses-popup {
+        padding: 26px 20px;
+    }
+
+    .courses-popup-actions {
+        flex-direction: column;
+    }
+
+    .courses-popup-cancel,
+    .courses-popup-confirm {
+        width: 100%;
+    }
+
+}

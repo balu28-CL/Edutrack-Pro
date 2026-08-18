@@ -1,10 +1,27 @@
+import "../styles/Notice.css";
+
 function RecentNotice({ notices }) {
+
+    const handleViewAll = () => {
+        window.location.href = "/notices";
+    };
 
     return (
 
         <div className="notice-card">
 
-            <h2>📢 Recent Notices</h2>
+            <div className="notice-header">
+
+                <h2>📢 Recent Notices</h2>
+
+                <button
+                    className="view-all-btn"
+                    onClick={handleViewAll}
+                >
+                    View All ↓
+                </button>
+
+            </div>
 
             {
                 notices.length === 0 ? (
@@ -19,16 +36,37 @@ function RecentNotice({ notices }) {
                             key={notice._id}
                             className="notice-item"
                         >
+<div className="notice-title-row">
 
-                            <h3>{notice.title}</h3>
+    <h3 className="notice-title">
+        📌 {notice.title}
+    </h3>
 
-                            <p>{notice.description}</p>
+    <span
+        className={`priority-badge ${notice.priority?.toLowerCase()}`}
+    >
+        {notice.priority || "Normal"}
+    </span>
 
-                            <small>
+</div>
 
-                                Posted By : {notice.postedBy.name}
+                            <p className="notice-description">
+                                {notice.description}
+                            </p>
 
-                            </small>
+                            <div className="notice-footer">
+
+                                <span className="posted-by">
+                                    👤 {notice.postedBy?.name}
+                                </span>
+
+                                <span className="notice-time">
+                                    📅 {new Date(
+                                        notice.createdAt
+                                    ).toLocaleDateString()}
+                                </span>
+
+                            </div>
 
                         </div>
 
@@ -40,7 +78,6 @@ function RecentNotice({ notices }) {
         </div>
 
     );
-
 }
 
 export default RecentNotice;

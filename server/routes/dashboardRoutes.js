@@ -6,6 +6,12 @@ const {
 } = require("../controllers/dashboardController");
 
 // Dashboard Stats
-router.get("/", getDashboardStats);
+const protect = require("../middleware/authMiddleware");
+
+router.get(
+    "/",
+    protect,
+    getDashboardStats
+);
 
 module.exports = router;

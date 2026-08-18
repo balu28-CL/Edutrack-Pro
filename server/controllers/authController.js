@@ -1,6 +1,8 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Student = require("../models/Student");
+const Faculty = require("../models/Faculty");
 
 // Register User
 const registerUser = async (req, res) => {
@@ -73,17 +75,19 @@ const loginUser = async (req, res) => {
                 message: "Invalid Credentials"
             });
         }
-
-        const token = jwt.sign(
-            {
-                id: user._id,
-                role: user.role
-            },
-            process.env.JWT_SECRET,
-            {
-                expiresIn: "1d"
-            }
-        );
+        
+const token = jwt.sign(
+    {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role
+    },
+    process.env.JWT_SECRET,
+    {
+        expiresIn: "1d"
+    }
+);
 
         const userResponse = {
     _id: user._id,
@@ -109,7 +113,55 @@ res.status(200).json({
 
 };
 
+// Get Logged-in User Profile
+const getProfile = async (req, res) => {
+    try {
+
+        const user = await User.findById(req.user.id)
+            .select("-password");
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found"
+            });
+        }
+
+        let profile = null;
+
+        // STUDENT PROFILE
+        if (user.role === "student") {
+
+            profile = await Student.findOne({
+                user: user._id
+            });
+        }
+
+        // FACULTY PROFILE
+        if (user.role === "faculty") {
+
+            profile = await Faculty.findOne({
+                user: user._id
+            });
+        }
+
+        res.status(200).json({
+            user,
+            profile
+        });
+
+    } catch (error) {
+
+        console.log("GET PROFILE ERROR:", error);
+
+        res.status(500).json({
+            message: error.message
+        });
+
+    }
+};
+
 module.exports = {
     registerUser,
-    loginUser
+    loginUser,
+    getProfile
 };

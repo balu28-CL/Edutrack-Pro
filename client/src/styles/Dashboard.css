@@ -1,167 +1,1167 @@
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f7fb;
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
 }
 
-.dashboard{
-
-    padding:30px;
-
+html,
+body,
+#root {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
 }
 
-.dashboard h1{
-
-    margin-bottom:30px;
-    color:#222;
-
-}
-
-.stats-container{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-    gap:20px;
-
-}
-
-.stat-card{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:22px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-
-    transition:0.3s;
-
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070b17;
+    color: #f8fafc;
+    overflow-x: hidden;
 }
 
 
-.stat-card:hover{
+/* =========================================
+   DASHBOARD BASE
+========================================= */
 
-    transform:translateY(-5px);
-
-    box-shadow:0 15px 30px rgba(0,0,0,0.15);
-
+.dashboard {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
 }
 
-.stat-header{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:25px;
-
+.dashboard h1 {
+    color: #f8fafc;
 }
 
-.stat-card h3{
 
-    margin:0;
+/* =========================================
+   ADMIN / FACULTY STATS
+========================================= */
 
-    font-size:20px;
+.stats-container {
+    display: grid;
 
-    color:#444;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-    font-weight:600;
+    gap: 18px;
 
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
 }
 
-.stat-card h1{
-
-    margin:0;
-
-    font-size:42px;
-
-    color:#2563eb;
-
-    font-weight:700;
-
+.stats-container > * {
+    min-width: 0;
+    width: 100%;
 }
 
-.icon-box{
 
-    width:50px;
+/* =========================================
+   STUDENT WELCOME
+========================================= */
 
-    height:50px;
+.student-welcome-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
-    border-radius:12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    background:#2563eb;
+    gap: 25px;
 
-    display:flex;
+    padding: 28px 32px;
+    margin-bottom: 25px;
 
-    align-items:center;
+    border-radius: 20px;
 
-    justify-content:center;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.16),
+            rgba(124, 58, 237, 0.12)
+        );
 
-    color:white;
+    border:
+        1px solid rgba(96, 165, 250, 0.15);
 
-    flex-shrink:0;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.20);
 
+    overflow: hidden;
 }
 
-.notice-card{
+.student-welcome-card h2 {
+    margin: 0;
 
-    margin-top:40px;
+    color: #f8fafc;
 
-    background:white;
+    font-size: 27px;
+    font-weight: 700;
 
-    border-radius:18px;
-
-    padding:25px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-
+    line-height: 1.3;
 }
 
-.notice-card h2{
+.student-welcome-card p {
+    margin: 8px 0 0;
 
-    margin-bottom:20px;
+    color: #94a3b8;
 
-    color:#222;
+    font-size: 14px;
 
+    line-height: 1.5;
 }
 
-.notice-item{
 
-    padding:15px 0;
+/* =========================================
+   STUDENT INFO
+========================================= */
 
-    border-bottom:1px solid #eee;
+.student-info {
+    display: flex;
 
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    max-width: 420px;
+
+    min-width: 0;
 }
 
-.notice-item:last-child{
+.student-info span {
+    padding: 8px 12px;
 
-    border-bottom:none;
+    border-radius: 10px;
 
+    background: rgba(15, 23, 42, 0.65);
+
+    border:
+        1px solid rgba(148, 163, 184, 0.12);
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    white-space: nowrap;
 }
 
-.notice-item h3{
 
-    margin:0;
+/* =========================================
+   STUDENT STATISTICS
+========================================= */
 
-    color:#2563eb;
+.student-stats-container {
+    display: grid;
 
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin-bottom: 25px;
 }
 
-.notice-item p{
+.student-stat-card {
+    display: flex;
 
-    margin:8px 0;
+    align-items: center;
 
-    color:#666;
+    gap: 18px;
 
+    width: 100%;
+    min-width: 0;
+
+    padding: 24px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(15, 23, 42, 0.72);
+
+    border:
+        1px solid rgba(148, 163, 184, 0.10);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
 }
 
-.notice-item small{
+.student-stat-card:hover {
+    transform: translateY(-3px);
 
-    color:#999;
+    border-color:
+        rgba(96, 165, 250, 0.30);
+}
 
+.student-stat-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background:
+        rgba(37, 99, 235, 0.12);
+
+    font-size: 25px;
+}
+
+.student-stat-card p {
+    margin: 0 0 5px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+.student-stat-card h2 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 27px;
+}
+
+.student-stat-card small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.attendance-card .student-stat-icon {
+    background:
+        rgba(249, 115, 22, 0.12);
+}
+
+.marks-card .student-stat-icon {
+    background:
+        rgba(147, 51, 234, 0.12);
+}
+
+.notice-card-small .student-stat-icon {
+    background:
+        rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   LOWER DASHBOARD
+========================================= */
+
+/*
+   JSX ORDER:
+
+   1. Recent Notices
+   2. My Recent Marks
+   3. My Academics
+
+
+   DESKTOP:
+
+   ┌──────────────────────┬──────────────────────┐
+   │                      │                      │
+   │   Recent Notices     │   My Recent Marks    │
+   │                      │                      │
+   ├──────────────────────┴──────────────────────┤
+   │                                             │
+   │                My Academics                 │
+   │                                             │
+   └─────────────────────────────────────────────┘
+*/
+
+.dashboard-lower {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(320px, 1fr);
+
+    grid-template-areas:
+        "notices marks"
+        "academics academics";
+
+    gap: 20px;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin-top: 26px;
+
+    /*
+       IMPORTANT:
+       Do NOT stretch every card to the
+       height of the tallest card.
+    */
+    align-items: start;
+}
+
+
+/* =========================================
+   LOWER DASHBOARD CHILDREN
+========================================= */
+
+/* Recent Notices */
+.dashboard-lower > .notice-card {
+    grid-area: notices;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    align-self: start;
+}
+
+
+/* My Recent Marks */
+.dashboard-lower > .quick-actions:nth-child(2) {
+    grid-area: marks;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    align-self: start;
+}
+
+
+/* My Academics */
+.dashboard-lower > .quick-actions:nth-child(3) {
+    grid-area: academics;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    align-self: start;
+}
+
+
+/*
+   IMPORTANT:
+   Do NOT use height: 100% here.
+   That was causing Quick Actions
+   to stretch vertically.
+*/
+
+.dashboard-lower > * {
+    box-sizing: border-box;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    height: auto;
+
+    align-self: start;
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.quick-actions {
+    position: relative;
+    margin-top: 53px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    height: fit-content;
+
+    overflow: hidden;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 24, 39, 0.96),
+            rgba(15, 23, 42, 0.90)
+        );
+
+    border:
+        1px solid rgba(99, 102, 241, 0.22);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30),
+        0 0 30px rgba(99, 102, 241, 0.07);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    align-self: start;
+}
+
+
+/* =========================================
+   QUICK ACTION NEON LINE
+========================================= */
+
+.quick-actions::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #2563eb,
+            #06b6d4
+        );
+}
+
+
+/* =========================================
+   QUICK ACTION HEADER
+========================================= */
+
+.quick-actions-header {
+    min-width: 0;
+}
+
+.quick-actions-header h2 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+.quick-actions-header p {
+    margin: 6px 0 20px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   ACTION GRID
+========================================= */
+
+.action-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================
+   ACTION BUTTON
+========================================= */
+
+.action-btn {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    padding: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        rgba(30, 41, 59, 0.65);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(30, 41, 59, 0.85);
+}
+
+
+/* =========================================
+   ACTION ICON
+========================================= */
+
+.action-btn > span {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   ACTION TEXT
+========================================= */
+
+.action-btn div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+.action-btn strong {
+    display: block;
+
+    color: #f8fafc;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.action-btn small {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   ACTION COLORS
+========================================= */
+
+.action-btn.blue > span {
+    background:
+        rgba(37, 99, 235, 0.20);
+
+    box-shadow:
+        0 0 15px rgba(37, 99, 235, 0.16);
+}
+
+.action-btn.blue:hover {
+    border-color:
+        rgba(37, 99, 235, 0.55);
+
+    box-shadow:
+        0 0 22px rgba(37, 99, 235, 0.18);
+}
+
+
+.action-btn.green > span {
+    background:
+        rgba(22, 163, 74, 0.20);
+
+    box-shadow:
+        0 0 15px rgba(22, 163, 74, 0.16);
+}
+
+.action-btn.green:hover {
+    border-color:
+        rgba(22, 163, 74, 0.55);
+
+    box-shadow:
+        0 0 22px rgba(22, 163, 74, 0.18);
+}
+
+
+.action-btn.orange > span {
+    background:
+        rgba(249, 115, 22, 0.20);
+
+    box-shadow:
+        0 0 15px rgba(249, 115, 22, 0.16);
+}
+
+.action-btn.orange:hover {
+    border-color:
+        rgba(249, 115, 22, 0.55);
+
+    box-shadow:
+        0 0 22px rgba(249, 115, 22, 0.18);
+}
+
+
+.action-btn.purple > span {
+    background:
+        rgba(147, 51, 234, 0.20);
+
+    box-shadow:
+        0 0 15px rgba(147, 51, 234, 0.16);
+}
+
+.action-btn.purple:hover {
+    border-color:
+        rgba(147, 51, 234, 0.55);
+
+    box-shadow:
+        0 0 22px rgba(147, 51, 234, 0.18);
+}
+
+
+/* =========================================
+   STUDENT MARKS
+========================================= */
+
+.student-marks-list {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.student-mark-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    background:
+        rgba(30, 41, 59, 0.55);
+
+    border:
+        1px solid rgba(148, 163, 184, 0.07);
+
+    gap: 10px;
+}
+
+.student-mark-item > div {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.student-mark-item strong {
+    color: #e2e8f0;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.student-mark-item small {
+    color: #64748b;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.student-mark-item > strong:last-child {
+    flex-shrink: 0;
+
+    color: #a78bfa;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   OLD ACADEMIC SUMMARY SUPPORT
+========================================= */
+
+.student-academic-summary {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(15, 23, 42, 0.72);
+
+    border:
+        1px solid rgba(148, 163, 184, 0.10);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.summary-header h2 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 20px;
+}
+
+.summary-header p {
+    margin: 6px 0 20px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.marks-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+.student-mark-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(30, 41, 59, 0.55);
+
+    border:
+        1px solid rgba(148, 163, 184, 0.07);
+}
+
+.student-mark-row > div:first-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.student-mark-row strong {
+    color: #e2e8f0;
+
+    font-size: 14px;
+}
+
+.student-mark-row small {
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.mark-value {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 3px;
+
+    flex-shrink: 0;
+}
+
+.mark-value strong {
+    color: #a78bfa;
+
+    font-size: 20px;
+}
+
+.mark-value span {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.empty-message {
+    margin: 0;
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   NOTICE CARD
+========================================= */
+
+.dashboard-lower .notice-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin-top: 0;
+
+    align-self: start;
+}
+
+
+/* =========================================
+   LARGE SCREENS
+========================================= */
+
+@media (min-width: 1400px) {
+
+    .stats-container {
+        gap: 22px;
+    }
+
+    .dashboard-lower {
+        gap: 24px;
+    }
+}
+
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .stats-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    /*
+       Keep the same logical arrangement:
+       
+       Recent Notices | Recent Marks
+       My Academics   | My Academics
+    */
+
+    .dashboard-lower {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        grid-template-areas:
+            "notices marks"
+            "academics academics";
+    }
+}
+
+
+/* =========================================
+   MEDIUM SCREENS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-lower {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "notices"
+            "marks"
+            "academics";
+
+        gap: 18px;
+    }
+
+    .student-welcome-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .student-info {
+        justify-content: flex-start;
+
+        max-width: 100%;
+    }
+
+    .student-stats-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .stats-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .student-stats-container {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .dashboard-lower {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "notices"
+            "marks"
+            "academics";
+
+        gap: 18px;
+
+        margin-top: 20px;
+    }
+
+    .student-welcome-card {
+        padding: 22px;
+    }
+
+    .student-welcome-card h2 {
+        font-size: 22px;
+    }
+
+    .quick-actions {
+        padding: 18px;
+    }
+
+    .quick-actions-header h2 {
+        font-size: 19px;
+    }
+
+    .quick-actions-header p {
+        font-size: 13px;
+    }
+
+    .action-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .action-btn {
+        padding: 12px;
+    }
+
+    .student-stat-card {
+        padding: 20px;
+    }
+
+    .student-academic-summary {
+        padding: 20px;
+    }
+
+    .student-mark-row {
+        padding: 13px 14px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 450px) {
+
+    .student-welcome-card {
+        padding: 18px;
+    }
+
+    .student-welcome-card h2 {
+        font-size: 20px;
+    }
+
+    .student-info {
+        gap: 6px;
+    }
+
+    .student-info span {
+        font-size: 11px;
+
+        padding: 7px 9px;
+    }
+
+    .student-stat-card {
+        padding: 17px;
+    }
+
+    .student-stat-icon {
+        width: 44px;
+        height: 44px;
+
+        font-size: 21px;
+    }
+
+    .student-stat-card h2 {
+        font-size: 23px;
+    }
+
+    .quick-actions {
+        padding: 15px;
+
+        border-radius: 16px;
+    }
+
+    .action-btn {
+        padding: 11px;
+    }
+
+    .action-btn > span {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+    .action-btn strong {
+        font-size: 13px;
+    }
+
+    .action-btn small {
+        font-size: 10px;
+    }
+
+    .student-academic-summary {
+        padding: 17px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .student-welcome-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 18px 16px;
+        overflow: hidden;
+    }
+
+    .student-welcome-card h2 {
+        font-size: 20px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .student-welcome-card p {
+        font-size: 13px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .dashboard {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
 }

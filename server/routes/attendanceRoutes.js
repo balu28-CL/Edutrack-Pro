@@ -1,4 +1,5 @@
 const express = require("express");
+
 const router = express.Router();
 
 const {
@@ -9,19 +10,58 @@ const {
     deleteAttendance
 } = require("../controllers/attendanceController");
 
-// Create Attendance
-router.post("/", createAttendance);
+const protect = require("../middleware/authMiddleware");
+const authorize = require("../middleware/roleMiddleware");
 
-// Get All Attendance
-router.get("/", getAllAttendance);
 
-// Get Attendance By ID
-router.get("/:id", getAttendanceById);
+// Get attendance
+// Admin + Faculty + Student
+router.get(
+    "/",
+    protect,
+    authorize("admin", "faculty", "student"),
+    getAllAttendance
+);
 
-// Update Attendance
-router.put("/:id", updateAttendance);
 
-// Delete Attendance
-router.delete("/:id", deleteAttendance);
+// Get attendance by ID
+// Admin + Faculty + Student
+router.get(
+    "/:id",
+    protect,
+    authorize("admin", "faculty", "student"),
+    getAttendanceById
+);
+
+
+// Create attendance
+// Admin + Faculty ONLY
+router.post(
+    "/",
+    protect,
+    authorize("admin", "faculty"),
+    createAttendance
+);
+
+
+// Update attendance
+// Admin + Faculty ONLY
+router.put(
+    "/:id",
+    protect,
+    authorize("admin", "faculty"),
+    updateAttendance
+);
+
+
+// Delete attendance
+// Admin + Faculty ONLY
+router.delete(
+    "/:id",
+    protect,
+    authorize("admin", "faculty"),
+    deleteAttendance
+);
+
 
 module.exports = router;
